@@ -1,0 +1,34 @@
+<div class="container shadow-none p-3 mb-5 bg-light rounded">
+    <div align="right">
+        <a [routerLink]="['/addnote']">
+            <button class="btn btn-primary">+ Add Note</button>
+        </a>
+    </div>
+    <br>
+    <table class="table table-bordered border-primary table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col" width="20%;">Title</th>
+                <th scope="col" width="60%;">Description</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let note of notes">
+                <td>{{ note.id }}</td>
+                <td>{{ note.title }}</td>
+                <td>{{ note.description }}</td>
+                <!-- <td><a [routerLink]="['/updatenote']"><button class="btn btn-info" style='margin-right:5px'>Update</button></a>
+                    <button class="btn btn-danger" (click)="onDelete(note.id)">Delete</button>
+                </td> -->
+
+                <td>
+                    <button class="btn btn-info" (click)="onEdit(note)" style='margin-right:5px'>Edit</button>
+                    <!-- <button class="btn btn-info" (click)="onUpdate(note.id)" style='margin-right:5px'>Update</button> -->
+                    <button class="btn btn-danger" (click)="onDelete(note.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

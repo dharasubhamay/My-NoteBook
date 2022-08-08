@@ -1,0 +1,21 @@
+<div class="container">
+    <form [formGroup]="noteForm">
+        <div class="form-group">
+            <label for="title"><b>Title</b></label>
+            <input type="text" class="form-control" id="title" name="title" formControlName="title">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="description"><b>Description</b></label>
+            <input type="text" class="form-control" id="description" name="description" formControlName="description">
+        </div>
+        <br>
+        <div class="form-group">
+            <button (click)="backClicked()" class="btn btn-warning" style="margin-right:5px;">Back</button>
+            <!-- <button class="btn btn-danger" style='margin-right:5px' type="button">Cancel</button> -->
+            <button *ngIf="showAdd" (click)="addNote()" class="btn btn-primary">Add</button>
+            <button *ngIf="!showAdd" (click)="saveNote()" class="btn btn-success">Update</button>
+            <!-- <input type="submit" value="Add" class="btn btn-success"> -->
+        </div>
+    </form>
+</div>
